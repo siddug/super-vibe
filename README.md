@@ -4,9 +4,8 @@ Super Vibe is a companion project to [Mistral Vibe](https://github.com/mistralai
 
 ## Features
 
-- **Web Search Tool**: Integrates SearXNG as a web search engine to fetch information from the web
-- **Easy Integration**: Tools can be symlinked to your Vibe installation for seamless use
-- **Customizable**: Configure search engine settings and tool behavior
+- **Web Search Tool**: Integrates SearXNG as a web search engine to fetch information from the web.
+- **Coding Guidelines Agent**: Tool that works on your files to make sure they are as per the coding guidelines.
 
 ## Installation
 
@@ -15,7 +14,7 @@ Super Vibe is a companion project to [Mistral Vibe](https://github.com/mistralai
 1. Install Docker on your system
 2. Have Mistral Vibe installed and configured
 
-### Setting up SearXNG
+### Setting up SearXNG for Web Search Tool
 
 1. Navigate to the helpers directory:
    ```bash
@@ -33,16 +32,31 @@ Super Vibe is a companion project to [Mistral Vibe](https://github.com/mistralai
 
 1. Create the Vibe tools directory if it doesn't exist:
    ```bash
-   mkdir -p ~/.vibe/tools/prompts
+   mkdir -p ~/.vibe/tools
+   mkdir -p ~/.vibe/prompts
    ```
 
 2. Symlink the tools to your Vibe installation:
    ```bash
    ln -sf <super-vibe-path>/tools/web_search.py ~/.vibe/tools/
-   ln -sf <super-vibe-path>/prompts/web_search.md ~/.vibe/tools/prompts/
+   ln -sf <super-vibe-path>/prompts/web_search.md ~/.vibe/prompts/
    ```
 
    Alternatively, you can symlink these in your specific project directory instead of globally.
+
+### Installing Super Vibe Agents
+
+1. Create the Vibe agents director if it doesn't exist:
+   ```bash
+   mkdir -p ~/.vibe/agents
+   mkdir -p ~/.vibe/prompts
+   ```
+
+2. Symlink the tools to your Vibe installation:
+   ```bash
+   ln -sf <super-vibe-path>/agents/python_linter.py ~/.vibe/agents/
+   ln -sf <super-vibe-path>/prompts/python_linter.md ~/.vibe/tools/prompts/
+   ```
 
 ### Configuration
 
