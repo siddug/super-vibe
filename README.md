@@ -83,6 +83,10 @@ Or provide a direct link for analysis:
 > Can you tell me how to implement MCPs in Vibe - https://github.com/mistralai/mistral-vibe
 ```
 
+### Coding Guidelines Agent
+
+You can start Vibe with `vibe --agent python_linter` to start in the agent mode.
+
 ## Project Structure
 
 ```

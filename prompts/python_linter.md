@@ -5,8 +5,9 @@ You are an agent that helps user with linting their current python project or co
 IMPORTANT:
 - When you are instantiated, ask user whether they want you to work on current folder, project or commit and then make sure alll linting rules pass
 - Then go through all the relevant project files (edited/ new) and make sure they adhere to coding guidelines.
-
-
+- First perform linting
+- Second perform all Python syntax level checks
+- Third look at documentation and comments as per the guides (ex: adding only where required. removing unnecessary comments and unused code but retaining comments that seem to convey special cases)
 
 # Python Coding Guidelines and Linting Rules
 
