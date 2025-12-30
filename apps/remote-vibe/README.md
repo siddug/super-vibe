@@ -60,3 +60,7 @@ Examples:
 - `"google/gemini-2.5-pro"` - Gemini 2.5 Pro
 
 Format is `provider/model-name`. You can also set `small_model` for tasks like title generation.
+
+## Acknowledgments
+
+This project was inspired by [Kimaki](https://github.com/remorses/kimaki) - a similar concept for remote control of coding assistants.

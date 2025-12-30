@@ -6,6 +6,7 @@ Super Vibe is a companion project to [Mistral Vibe](https://github.com/mistralai
 
 - **Web Search Tool**: Integrates SearXNG as a web search engine to fetch information from the web.
 - **Coding Guidelines Agent**: Tool that works on your files to make sure they are as per the coding guidelines.
+- **Remote Vibe**: Discord bot for controlling Devstral <> OpenCode sessions remotely via Discord
 
 ## Installation
 
@@ -58,6 +59,25 @@ Super Vibe is a companion project to [Mistral Vibe](https://github.com/mistralai
    ln -sf <super-vibe-path>/prompts/python_linter.md ~/.vibe/tools/prompts/
    ```
 
+### Setting up Remote Vibe
+
+1. Navigate to the remote-vibe directory:
+   ```bash
+   cd apps/remote-vibe/discord
+   ```
+
+2. Install dependencies:
+   ```bash
+   pnpm install
+   ```
+
+3. Run the development server:
+   ```bash
+   pnpm dev
+   ```
+
+4. Follow the CLI prompts to configure your Discord bot and API keys
+
 ### Configuration
 
 By default, SearXNG runs on port 8888. If you change the port, update the configuration in your `config.toml`:
@@ -87,12 +107,20 @@ Or provide a direct link for analysis:
 
 You can start Vibe with `vibe --agent python_linter` to start in the agent mode.
 
+### Remote Vibe
+
+Once configured, you can control OpenCode sessions in any computer via Discord channels. Each project gets its own channel where you can send messages to control the OpenCode session.
+
 ## Project Structure
 
 ```
 super-vibe/
+├── apps/
+│   └── remote-vibe/          # Remote Vibe Discord bot
+│       ├── discord/          # Discord bot implementation
+│       └── ...
 ├── helpers/
-│   └── searxng/
+│   └── searxng/              # SearXNG web search
 │       ├── config/          # SearXNG configuration files
 │       │   └── settings.yml
 │       ├── data/            # SearXNG data directory
@@ -132,3 +160,4 @@ See the LICENSE file for the full license text.
 
 - Built on top of [Mistral Vibe](https://github.com/mistralai/mistral-vibe)
 - Uses [SearXNG](https://github.com/searxng/searxng) for web search functionality
+- Inspired by [Kimaki](https://github.com/remorses/kimaki) for the remote control starter
