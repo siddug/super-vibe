@@ -1,0 +1,4 @@
+{
+  "model": "mistral/devstral-medium-latest",
+  "$schema": "https://opencode.ai/config.json"
+}
