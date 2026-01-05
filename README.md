@@ -55,8 +55,11 @@ Super Vibe is a companion project to [Mistral Vibe](https://github.com/mistralai
 
 2. Symlink the tools to your Vibe installation:
    ```bash
-   ln -sf <super-vibe-path>/agents/python_linter.py ~/.vibe/agents/
-   ln -sf <super-vibe-path>/prompts/python_linter.md ~/.vibe/tools/prompts/
+   ln -s <super-vibe-path>/agents/python_linter.toml ~/.vibe/agents/python_linter.toml
+   ln -s <super-vibe-path>/prompts/python_linter.md ~/.vibe/tools/prompts/python_linter.md
+
+   ln -s <super-vibe-path>/agents/vapt_agent.toml ~/.vibe/agents/vapt_agent.toml
+   ln -s <super-vibe-path>/prompts/vapt_agent.md ~/.vibe/tools/prompts/vapt_agent.md
    ```
 
 ### Setting up Remote Vibe
@@ -77,6 +80,20 @@ Super Vibe is a companion project to [Mistral Vibe](https://github.com/mistralai
    ```
 
 4. Follow the CLI prompts to configure your Discord bot and API keys
+
+### Setting up MCPs
+
+We have VAPT agent that uses MCPs to conduct VAPT testing. Here's an example of how to set it up:
+
+1. Follow the instructions here - https://github.com/0x4m4/hexstrike-ai (i.e clone the repo, setup venv and install deps)
+
+2. Install as many security tools as you can (Instructions to setup popular tools are provided in the repo ^)
+
+3. Once done, start the MCP server `python3 hexstrike_server.py --port 8889`
+
+4. Change the hexstrike python path in vapt_agent.toml file with your system's directory path
+
+5. Once done, you can instantiate the VAPT agent that uses your MCP with `vibe --agent vapt_agent`
 
 ### Configuration
 

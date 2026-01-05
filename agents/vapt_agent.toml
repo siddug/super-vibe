@@ -1,0 +1,7 @@
+system_prompt_id="vapt_agent"
+
+[[mcp_servers]]
+name = "hexstrike"
+transport = "stdio"
+command = "/Users/siddharta.gunti/Documents/code/hexstrike/hexstrike-ai/hexstrike-env/bin/python"
+args = ["/Users/siddharta.gunti/Documents/code/hexstrike/hexstrike-ai/hexstrike_mcp.py", "--server", "http://localhost:8889"]
