@@ -158,6 +158,8 @@ Contributions are welcome! Please feel free to submit pull requests or open issu
 - Documentation improvements
 - Feature enhancements
 
+**Maintainer**: <mailto:siddhartha.gunti@mistral.ai|siddhartha.gunti@mistral.ai>
+
 ## License
 
 Copyright 2025 Siddhartha Gunti
