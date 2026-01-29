@@ -158,6 +158,10 @@ Contributions are welcome! Please feel free to submit pull requests or open issu
 - Documentation improvements
 - Feature enhancements
 
+## Maintainers
+
+- [Mistral Vibe](https://github.com/mistralai/mistral-vibe) - AI Coding Assistant
+
 ## License
 
 Copyright 2025 Siddhartha Gunti
