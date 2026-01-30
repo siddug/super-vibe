@@ -23,7 +23,7 @@ class WebSearchToolConfig(BaseToolConfig):
 
     permission: ToolPermission = ToolPermission.ALWAYS
     searxng_url: str = Field(
-        default="http://localhost:8888",
+        default="http://localhost:8889",
         description="Base URL of the SearXNG instance.",
     )
     default_timeout: int = Field(
