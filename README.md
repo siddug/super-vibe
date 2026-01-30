@@ -178,3 +178,5 @@ See the LICENSE file for the full license text.
 - Built on top of [Mistral Vibe](https://github.com/mistralai/mistral-vibe)
 - Uses [SearXNG](https://github.com/searxng/searxng) for web search functionality
 - Inspired by [Kimaki](https://github.com/remorses/kimaki) for the remote control starter
+
+> "Don't Panic" - The Hitchhiker's Guide to the Galaxy
