@@ -1,5 +1,7 @@
 # Super Vibe
 
+> "Don't Panic" - The Hitchhiker's Guide to the Galaxy
+
 Super Vibe is a companion project to [Mistral Vibe](https://github.com/mistralai/mistral-vibe) that provides additional helper tools to enhance your coding assistant experience.
 
 ## Features
