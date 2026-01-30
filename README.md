@@ -27,7 +27,7 @@ Super Vibe is a companion project to [Mistral Vibe](https://github.com/mistralai
    docker compose -f docker-compose.yml up -d
    ```
 
-3. Test that SearXNG is running by visiting http://localhost:8888/
+3. Test that SearXNG is running by visiting http://localhost:8889/
 
 ### Installing Super Vibe Tools
 
@@ -97,7 +97,7 @@ We have VAPT agent that uses MCPs to conduct VAPT testing. Here's an example of 
 
 ### Configuration
 
-By default, SearXNG runs on port 8888. If you change the port, update the configuration in your `config.toml`:
+By default, SearXNG runs on port 8889. If you change the port, update the configuration in your `config.toml`:
 
 ```toml
 [tools.web_search]
