@@ -50,7 +50,7 @@ Fetch a URL and extract its content as markdown/text.
 
 ## Notes
 
-- The search uses a local SearXNG instance (default: http://localhost:8888)
+- The search uses a local SearXNG instance (default: http://localhost:8889)
 - Page content is automatically converted to markdown when possible
 - Large pages are truncated to prevent overwhelming responses
 - For best results, use specific search queries

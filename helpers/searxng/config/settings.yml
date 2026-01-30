@@ -80,7 +80,7 @@ search:
 
 server:
   # Is overwritten by ${SEARXNG_PORT} and ${SEARXNG_BIND_ADDRESS}
-  port: 8888
+  port: 8889
   bind_address: "127.0.0.1"
   # public URL of the instance, to ensure correct inbound links. Is overwritten
   # by ${SEARXNG_BASE_URL}.
@@ -1944,7 +1944,7 @@ engines:
   #   engine: searx_engine
   #   shortcut: se
   #   instance_urls :
-  #       - http://127.0.0.1:8888/
+  #       - http://127.0.0.1:8889/
   #       - ...
   #   disabled: true
 
