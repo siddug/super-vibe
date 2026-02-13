@@ -870,15 +870,27 @@ async function processVoiceAttachment({
     try {
       voiceLogger.log(`Getting project file tree from ${projectDirectory}`)
       // Use git ls-files to get tracked files, then pipe to tree
+      // SECURITY: Use spawn instead of exec to avoid shell injection
       const execAsync = promisify(exec)
-      const { stdout } = await execAsync('git ls-files | tree --fromfile -a', {
-        cwd: projectDirectory,
-      })
-      const result = stdout
+      try {
+        const { stdout } = await execAsync('git ls-files', {
+          cwd: projectDirectory,
+        })
+        const files = stdout.trim()
+        if (files) {
+          const { stdout: treeOutput } = await execAsync('tree --fromfile -a', {
+            cwd: projectDirectory,
+            input: files,
+          })
+          const result = treeOutput
 
-      if (result) {
-        transcriptionPrompt = `Discord voice message transcription. Project file structure:\n${result}\n\nPlease transcribe file names and paths accurately based on this context.`
-        voiceLogger.log(`Added project context to transcription prompt`)
+          if (result) {
+            transcriptionPrompt = `Discord voice message transcription. Project file structure:\n${result}\n\nPlease transcribe file names and paths accurately based on this context.`
+            voiceLogger.log(`Added project context to transcription prompt`)
+          }
+        }
+      } catch (e) {
+        voiceLogger.log(`Could not get project tree:`, e)
       }
     } catch (e) {
       voiceLogger.log(`Could not get project tree:`, e)
@@ -2704,6 +2716,28 @@ if (!isOwner && !isAdmin && !canManageServer && !hasRemoteVibeRole) {
         // Handle slash commands
         if (interaction.isChatInputCommand()) {
           const command = interaction
+          
+          // Check if user is authorized (same checks as message handler)
+          if (command.guild && command.member) {
+            const isOwner = command.member.id === command.guild.ownerId
+            const isAdmin = command.member.permissions.has(
+              PermissionsBitField.Flags.Administrator,
+            )
+            const canManageServer = command.member.permissions.has(
+              PermissionsBitField.Flags.ManageGuild,
+            )
+            const hasRemoteVibeRole = command.member.roles.cache.some(
+              (role) => role.name.toLowerCase() === 'remote-vibe',
+            )
+
+            if (!isOwner && !isAdmin && !canManageServer && !hasRemoteVibeRole) {
+              await command.reply({
+                content: 'You do not have permission to use this command. Required: Server Owner, Administrator, Manage Server permission, or Remote-vibe role.',
+                ephemeral: true,
+              })
+              return
+            }
+          }
 
           if (command.commandName === 'session') {
             await command.deferReply({ ephemeral: false })
